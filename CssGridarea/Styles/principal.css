@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #e7e7e7;
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif,sans-serif;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas: "header header header"
+                        "contenido contenido sidebar"
+                        "widget-1 widget-2 sidebar"
+                        "footer footer footer";
+}
+
+.contenedor > div,
+.contenedor .encabezado,
+.contenedor .contenido,
+.contenedor .sidebar,
+.contenedor .pie_pagina {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.contenedor .encabezado {
+    display: grid;
+    background: #12203E;
+    color: #ffffff;
+    align-items: center;
+    justify-content: center;
+    grid-area: header;
+}
+
+.contenedor .contenido {
+    grid-area: contenido;
+}
+
+.contenedor .sidebar {
+    display: grid;
+    background: #faa43d;
+    grid-area: sidebar;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .widget-1 {
+    display: grid;
+    background: #55a8fd;
+    color: #ffffff;
+    height: 100px;
+    grid-area: widget-1;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .widget-2 {
+    display: grid;
+    background: #55a8fd;
+    color: #ffffff;
+    height: 100px;
+    grid-area: widget-2;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .pie_pagina {
+    display: grid;
+    background: #12203E;
+    color: #ffffff;
+    align-items: center;
+    justify-content: center;
+    grid-area: footer;
+}
+
+@media screen and (max-width: 768px) {
+    .contenedor {
+        grid-template-areas: "header header header"
+                        "contenido contenido contenido"
+                        "sidebar sidebar sidebar"
+                        "widget-1 widget-1 widget-2"
+                        "footer footer footer";
+    }
+}
